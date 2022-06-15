@@ -221,19 +221,19 @@ print(model_SVM)
 vocabulary$WORD
 #Plot(vocabulary)
 
-print("boot632")
+print("boot632") ###2
 train_control <- trainControl(method="boot632", number = k , repeats = r)
 model_boot632 <- train( theclass~., data= training, trControl = train_control, method ="svmLinear")
 print(model_boot632) ###OK
 
 # Aprendiendo con Naive Bayes
-print("Naive Bayes")
+print("Naive Bayes") ###3
 train_control <- trainControl(method="cv", number = k , repeats = r)
 NaiveBayes <- train( theclass~., data= training, trControl = train_control, method = "nb")
 print(NaiveBayes) ###OK
 
 # Aprendiendo con randomForest
-print("Random Forest")
+print("Random Forest") ###4
 train_control <- trainControl(method="" , number = k , repeats = r)
 randomForest <- train( theclass~., data= training, trControl = train_control, method = "rf")
 print(randomForest) ###OK
